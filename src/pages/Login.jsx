@@ -25,7 +25,6 @@ const Login = () => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
 
-      console.log(result);
       await updateDoc(doc(db, 'users', result.user.uid), {
         isOnline: true,
       });
